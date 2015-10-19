@@ -23,6 +23,21 @@ public class Graph {
             public double weight() {
             	return weight;
             }
+
+            @Override
+            public String toString() {
+            	return String.format("(%d -> %d = %.02f)", from, to, weight);
+            }
+
+            @Override
+            public int hashCode() {
+            	return toString().hashCode();
+            }
+
+            @Override
+            public boolean equals(Object that) {
+            	return toString().equals(that.toString());
+            }
     }
 
 	private ArrayList<Edge>[] xs;
@@ -62,7 +77,7 @@ public class Graph {
 
         for (ArrayList<Edge> edges: xs) {
             for (Edge edge: edges) {
-            	edges.add(edge);
+            	allEdges.add(edge);
             }
         }
 

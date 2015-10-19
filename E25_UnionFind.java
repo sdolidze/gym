@@ -14,6 +14,7 @@ public class E25_UnionFind {
 
 	private int[] xs;
 
+	// weighted quick union with path compression is the best (not this one)
 	public E25_UnionFind(int size) {
 		xs = new int[size];
 
